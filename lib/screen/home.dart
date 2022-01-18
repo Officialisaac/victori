@@ -31,10 +31,37 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //   title: Text(widget.title),
-        // ),
-        body: Center(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
+        actions: [
+          Container(
+            color: Colors.transparent,
+            alignment: Alignment.topRight,
+            child: CircleAvatar(
+              radius: 30,
+              backgroundColor: const Color(0x00000000),
+              child: IconButton(
+                icon: const Icon(
+                  Icons.menu,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeVidInfo()),
+                  );
+                },
+              ),
+            ),
+          )
+        ],
+      ),
+      extendBodyBehindAppBar: true,
+      body: Center(
+        child: SingleChildScrollView(
+          reverse: true,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -45,29 +72,55 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        // bottomNavigationBar: BottomAppBar(),
-        floatingActionButton: Container(
-          padding: const EdgeInsets.only(
-            top: 50.0,
-          ),
-          alignment: Alignment.topRight,
-          child: CircleAvatar(
-            radius: 30,
-            backgroundColor: const Color(0x00000000),
-            child: IconButton(
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomeVidInfo()),
-                );
-              },
+      ),
+      bottomNavigationBar: Container(
+        // padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+        constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height / 14,
+            maxWidth: MediaQuery.of(context).size.width / 2,
+            minWidth: MediaQuery.of(context).size.width / 2),
+        alignment: Alignment.bottomCenter,
+        color: Colors.transparent,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.home),
+              iconSize: 40,
+              highlightColor: Colors.orange,
+              focusColor: Colors.orange,
+              disabledColor: Colors.grey,
             ),
-          ),
-        ) // This trailing comma makes auto-formatting nicer for build methods.
-        );
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.search),
+              iconSize: 40,
+              highlightColor: Colors.orange,
+              focusColor: Colors.orange,
+              disabledColor: Colors.grey,
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.message),
+              iconSize: 40,
+              highlightColor: Colors.orange,
+              focusColor: Colors.orange,
+              disabledColor: Colors.grey,
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.person),
+              iconSize: 40,
+              highlightColor: Colors.orange,
+              focusColor: Colors.orange,
+              disabledColor: Colors.grey,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

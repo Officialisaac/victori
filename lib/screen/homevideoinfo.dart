@@ -6,7 +6,7 @@ class HomeVidInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.deepOrangeAccent,
+      color: Colors.orange,
     );
   }
 }
