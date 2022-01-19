@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:victoria/page/bloom.dart';
 import 'package:victoria/screen/homevideoinfo.dart';
 
 class MyApp extends StatelessWidget {
@@ -49,8 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const HomeVidInfo()),
+                    MaterialPageRoute(builder: (context) => const SearchPage()),
                   );
                 },
               ),
@@ -59,20 +59,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       extendBodyBehindAppBar: true,
-      body: Center(
-        child: SingleChildScrollView(
-          reverse: true,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Display Vidoes of Tourist site',
-                style: Theme.of(context).textTheme.headline6,
-              ),
-            ],
-          ),
-        ),
-      ),
+      // ignore: prefer_const_constructors
+      body: HomePages(),
+      // Center(
+      //   child: SingleChildScrollView(
+      //     reverse: true,
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: <Widget>[
+      //         Text(
+      //           'Display Vidoes of Tourist site',
+      //           style: Theme.of(context).textTheme.headline6,
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
       bottomNavigationBar: Container(
         // padding: const EdgeInsets.only(left: 30.0, right: 30.0),
         constraints: BoxConstraints(
@@ -95,7 +97,12 @@ class _MyHomePageState extends State<MyHomePage> {
               disabledColor: Colors.grey,
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SearchPage()),
+                );
+              },
               icon: const Icon(Icons.search),
               iconSize: 40,
               highlightColor: Colors.orange,
