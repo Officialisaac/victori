@@ -1,28 +1,51 @@
 import 'package:flutter/material.dart';
 
-class BloomPage extends StatelessWidget {
-  const BloomPage({Key? key}) : super(key: key);
+class HomePages extends StatefulWidget {
+  const HomePages({Key? key}) : super(key: key);
 
   @override
+  _HomePagesState createState() => _HomePagesState();
+}
+
+class _HomePagesState extends State<HomePages> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      child: SafeArea(
-          child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.access_alarm))
-              ],
-            )
-          ],
-        ),
-      )),
+    // ignore: unused_local_variable
+    PageController controller = PageController(initialPage: 0);
+
+    List<Widget> reel = [
+      Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.blue,
+      ),
+      Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.red,
+      ),
+      Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.green,
+      ),
+      Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.black,
+      ),
+      Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.white,
+      ),
+    ];
+    return Scaffold(
+      body: PageView(
+        scrollDirection: Axis.vertical,
+        children: reel,
+        controller: controller,
+      ),
     );
   }
 }
