@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SearchPage extends StatefulWidget {
-  const SearchPage({Key? key}) : super(key: key);
+class VideoInfo extends StatefulWidget {
+  const VideoInfo({Key? key}) : super(key: key);
 
   @override
-  _SearchPageState createState() => _SearchPageState();
+  _VideoInfoState createState() => _VideoInfoState();
 }
 
-class _SearchPageState extends State<SearchPage> {
+class _VideoInfoState extends State<VideoInfo> {
   @override
   Widget build(BuildContext context) {
     return Container(
