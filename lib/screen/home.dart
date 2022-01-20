@@ -30,6 +30,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _selectedItemIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,23 +62,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       extendBodyBehindAppBar: true,
       // ignore: prefer_const_constructors
-      body: HomePages(),
-      // Center(
-      //   child: SingleChildScrollView(
-      //     reverse: true,
-      //     child: Column(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: <Widget>[
-      //         Text(
-      //           'Display Vidoes of Tourist site',
-      //           style: Theme.of(context).textTheme.headline6,
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
+      body: Center(child: HomePages()),
       bottomNavigationBar: Container(
-        // padding: const EdgeInsets.only(left: 30.0, right: 30.0),
         constraints: BoxConstraints(
             maxHeight: MediaQuery.of(context).size.height / 14,
             maxWidth: MediaQuery.of(context).size.width / 2,
@@ -88,45 +75,30 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.home),
-              iconSize: 40,
-              highlightColor: Colors.orange,
-              focusColor: Colors.orange,
-              disabledColor: Colors.grey,
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SearchPage()),
-                );
-              },
-              icon: const Icon(Icons.search),
-              iconSize: 40,
-              highlightColor: Colors.orange,
-              focusColor: Colors.orange,
-              disabledColor: Colors.grey,
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.message),
-              iconSize: 40,
-              highlightColor: Colors.orange,
-              focusColor: Colors.orange,
-              disabledColor: Colors.grey,
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.person),
-              iconSize: 40,
-              highlightColor: Colors.orange,
-              focusColor: Colors.orange,
-              disabledColor: Colors.grey,
-            ),
+            buildNavbarItem(Icons.home, 0),
+            buildNavbarItem(Icons.search, 1),
+            buildNavbarItem(Icons.message, 2),
+            buildNavbarItem(Icons.person, 3),
           ],
         ),
+      ),
+    );
+  }
+
+  GestureDetector buildNavbarItem(IconData icon, int index) {
+    return GestureDetector(
+      child: IconButton(
+        onPressed: () {
+          setState(() {
+            _selectedItemIndex = index;
+          });
+        },
+        icon: Icon(icon),
+        iconSize: 40,
+        color: index == _selectedItemIndex ? Colors.black : Colors.grey,
+        highlightColor: Colors.orange,
+        focusColor: Colors.orange,
+        disabledColor: Colors.grey,
       ),
     );
   }
