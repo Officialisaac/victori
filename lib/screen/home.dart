@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:victoria/page/bloom.dart';
+import 'package:victoria/screen/homevideoinfo.dart';
 import 'search.dart';
 
 class MyApp extends StatelessWidget {
@@ -46,7 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.menu,
                   color: Colors.black,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const VideoInfo()),
+                  );
+                },
               ),
             ),
           )
