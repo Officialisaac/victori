@@ -41,10 +41,12 @@ class _HomePagesState extends State<HomePages> {
       ),
     ];
     return Scaffold(
-      body: PageView(
-        scrollDirection: Axis.vertical,
-        children: reel,
-        controller: controller,
+      body: Container(
+        child: PageView(
+          scrollDirection: Axis.vertical,
+          children: reel,
+          controller: controller,
+        ),
       ),
     );
   }

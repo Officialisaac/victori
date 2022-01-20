@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:victoria/page/bloom.dart';
-import 'package:victoria/screen/search.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -46,12 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.menu,
                   color: Colors.black,
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SearchPage()),
-                  );
-                },
+                onPressed: () {},
               ),
             ),
           )
@@ -97,10 +91,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             IconButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SearchPage()),
-                );
               },
               icon: const Icon(Icons.search),
               iconSize: 40,
