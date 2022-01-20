@@ -20,6 +20,7 @@ class _SearchPageState extends State<SearchPage> {
             hintText: 'Enter a search term',
           ),
         ),
+        leading: null,
       ),
       extendBodyBehindAppBar: true,
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:victoria/page/bloom.dart';
 import 'package:victoria/screen/homevideoinfo.dart';
+import 'package:victoria/screen/msgpage.dart';
+import 'package:victoria/screen/profile.dart';
 import 'search.dart';
 
 class MyApp extends StatelessWidget {
@@ -32,6 +34,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedItemIndex = 0;
 
+  final screens = [
+    const HomePages(),
+    const SearchPage(),
+    const MessagePage(),
+    const MyProfile(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       extendBodyBehindAppBar: true,
       // ignore: prefer_const_constructors
-      body: Center(child: HomePages()),
+      body: screens[_selectedItemIndex],
       bottomNavigationBar: Container(
         constraints: BoxConstraints(
             maxHeight: MediaQuery.of(context).size.height / 14,
@@ -96,8 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
         icon: Icon(icon),
         iconSize: 40,
         color: index == _selectedItemIndex ? Colors.black : Colors.grey,
-        highlightColor: Colors.orange,
-        focusColor: Colors.orange,
         disabledColor: Colors.grey,
       ),
     );
