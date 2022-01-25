@@ -107,6 +107,11 @@ class _MyHomePageState extends State<MyHomePage> {
         color: index == _selectedItemIndex ? Colors.black : Colors.grey,
         disabledColor: Colors.grey,
       ),
+      onDoubleTap: () {
+        setState(() {
+          _selectedItemIndex = 0;
+        });
+      },
     );
   }
 }
