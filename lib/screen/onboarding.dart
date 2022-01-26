@@ -10,13 +10,6 @@ class OnBoardPage extends StatefulWidget {
 class _OnBoardPageState extends State<OnBoardPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          color: Colors.yellow,
-        ),
-      ),
-      // bottomNavigationBar: bott,
-    );
+    return Container();
   }
 }

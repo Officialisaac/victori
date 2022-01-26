@@ -73,21 +73,6 @@ class _HomePagesState extends State<HomePages> {
       ),
     ];
     return Scaffold(
-      // body: Builder(builder: (context) {
-      //   return LiquidSwipe(
-      //     pages: reel,
-      //     fullTransitionValue: 200,
-      //     waveType: WaveType.liquidReveal,
-      //     // ignore: prefer_const_constructors
-      //     slideIconWidget: Icon(Icons.compare_arrows),
-      //     positionSlideIcon: 0.8,
-      //     onPageChangeCallback: (page) {
-      //       // ignore: avoid_print
-      //       print(page);
-      //     },
-      //     liquidController: LiquidController(),
-      //   );
-      // }),
       body: PageView(
         scrollDirection: Axis.vertical,
         children: reel,
@@ -99,17 +84,6 @@ class _HomePagesState extends State<HomePages> {
           print(page);
         },
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     setState(() {
-      //       if (_controller.value.isPlaying) {
-      //         _controller.pause();
-      //       } else {
-      //         _controller.play();
-      //       }
-      //     });
-      //   },
-      // ),
     );
   }
 }
