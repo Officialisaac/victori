@@ -68,6 +68,23 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - asset/img/A3xxxhdpi.png
+    - asset/svg/logo.svg
+    - asset/svg/Asset 1.svg
+    - asset/svg/Asset 2.svg
+    - asset/svg/Asset 3.svg
+    - asset/svg/Asset 4.svg
+    - asset/svg/Asset 5.svg
+    - asset/svg/Asset 6.svg
+    - asset/svg/Asset 7.svg
+    - asset/svg/Asset 9.svg
+    - asset/svg/Asset 10.svg
+    - asset/svg/Asset 11.svg
+    - asset/svg/Asset 12.svg
+    - asset/svg/Asset 13.svg
+    - asset/svg/Asset 14.svg
+    - asset/svg/Asset 29.svg
+    - asset/svg/Asset 31.svg
+    - asset/svg/Asset 33.svg
     - asset/source/testing.mp4
     - asset/source/testing1.mp4
     - asset/source/testing2.mp4

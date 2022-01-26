@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 class OnBoardPage extends StatefulWidget {
@@ -10,6 +12,21 @@ class OnBoardPage extends StatefulWidget {
 class _OnBoardPageState extends State<OnBoardPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ShaderMask(
+      shaderCallback: (bounds) => const LinearGradient(
+              colors: [Colors.black, Colors.black12],
+              begin: Alignment.bottomCenter,
+              end: Alignment.center)
+          .createShader(bounds),
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('asset/svg/Asset 1.svg'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
+          ),
+        ),
+      ),
+    );
   }
 }
