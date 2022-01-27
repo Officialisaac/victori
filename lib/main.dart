@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:victoria/screen/onboarding.dart';
+import 'package:victoria/screen/welcome.dart';
 
 void main() {
-  runApp(const OnBoardPage());
+  runApp(const WelcomePage());
 }
