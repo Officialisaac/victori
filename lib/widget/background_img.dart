@@ -45,8 +45,8 @@ class OnboardBgImg extends StatelessWidget {
   }
 }
 
-class DiscoverPage extends StatelessWidget {
-  const DiscoverPage({Key? key}) : super(key: key);
+class VictoriaPage extends StatelessWidget {
+  const VictoriaPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +57,36 @@ class DiscoverPage extends StatelessWidget {
           image: AssetImage('asset/img/asset1.png'),
           fit: BoxFit.cover,
         ),
+      ),
+    );
+  }
+}
+
+class DiscoverPage extends StatelessWidget {
+  const DiscoverPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      // decoration: const BoxDecoration(
+      //   image: DecorationImage(
+      //     image: AssetImage('asset/img/asset1.png'),
+      //     fit: BoxFit.cover,
+      //   ),
+      // ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text(
+            'Discover',
+            style: TextStyle(
+                color: Colors.orangeAccent,
+                fontSize: 35.0,
+                fontWeight: FontWeight.bold),
+          ),
+          Text('Browse through videos of\nrich African tourist site')
+        ],
       ),
     );
   }
@@ -69,11 +99,22 @@ class ExplorePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('asset/img/asset1.png'),
-          fit: BoxFit.cover,
-        ),
+      // decoration: const BoxDecoration(
+      //   image: DecorationImage(
+      //     image: AssetImage('asset/img/asset1.png'),
+      //     fit: BoxFit.cover,
+      //   ),
+      // ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text('Explore',
+              style: TextStyle(
+                  color: Colors.orangeAccent,
+                  fontSize: 35.0,
+                  fontWeight: FontWeight.bold)),
+          Text('Visit tourist sites for an\nexperience of a lifetime')
+        ],
       ),
     );
   }
@@ -86,11 +127,22 @@ class SharePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('asset/img/asset1.png'),
-          fit: BoxFit.cover,
-        ),
+      // decoration: const BoxDecoration(
+      //   image: DecorationImage(
+      //     image: AssetImage('asset/img/asset1.png'),
+      //     fit: BoxFit.cover,
+      //   ),
+      // ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text('Share',
+              style: TextStyle(
+                  color: Colors.orangeAccent,
+                  fontSize: 35.0,
+                  fontWeight: FontWeight.bold)),
+          Text('Share experiences of your visit\nwith your friends and family')
+        ],
       ),
     );
   }

@@ -1,30 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:victoria/page/bloom.dart';
 import 'package:victoria/screen/homevideoinfo.dart';
 import 'package:victoria/screen/msgpage.dart';
 import 'package:victoria/screen/profile.dart';
 import 'search.dart';
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Victoria',
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          textTheme:
-              GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
-          primaryColor: Colors.deepOrangeAccent,
-          visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: const MyHomePage(title: 'a million+ sites'),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
