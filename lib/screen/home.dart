@@ -15,7 +15,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _selectedItemIndex = 0;
+  int _selectItemIndex = 0;
 
   final screens = [
     const HomePages(),
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       extendBodyBehindAppBar: true,
       // ignore: prefer_const_constructors
-      body: screens[_selectedItemIndex],
+      body: screens[_selectItemIndex],
       bottomNavigationBar: Container(
         constraints: BoxConstraints(
             maxHeight: MediaQuery.of(context).size.height / 14,
@@ -67,32 +67,32 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            buildNavbarItem(Icons.home, 0),
-            buildNavbarItem(Icons.search, 1),
-            buildNavbarItem(Icons.message, 2),
-            buildNavbarItem(Icons.person, 3),
+            buildNbarItem(Icons.home, 0),
+            buildNbarItem(Icons.search, 1),
+            buildNbarItem(Icons.message, 2),
+            buildNbarItem(Icons.person, 3),
           ],
         ),
       ),
     );
   }
 
-  GestureDetector buildNavbarItem(IconData icon, int index) {
+  GestureDetector buildNbarItem(IconData icon, int index) {
     return GestureDetector(
       child: IconButton(
         onPressed: () {
           setState(() {
-            _selectedItemIndex = index;
+            _selectItemIndex = index;
           });
         },
         icon: Icon(icon),
         iconSize: 40,
-        color: index == _selectedItemIndex ? Colors.black : Colors.grey,
+        color: index == _selectItemIndex ? Colors.black : Colors.grey,
         disabledColor: Colors.grey,
       ),
       onDoubleTap: () {
         setState(() {
-          _selectedItemIndex = 0;
+          _selectItemIndex = 0;
         });
       },
     );
