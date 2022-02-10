@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:victoria/screen/welcome.dart';
 
 void main() {
@@ -16,8 +15,6 @@ class MyApp extends StatelessWidget {
       title: 'Victoria',
       theme: ThemeData(
           primarySwatch: Colors.orange,
-          textTheme:
-              GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
           primaryColor: Colors.deepOrangeAccent,
           visualDensity: VisualDensity.adaptivePlatformDensity),
       home: const WelcomePage(),
