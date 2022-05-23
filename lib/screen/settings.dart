@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyProfile extends StatelessWidget {
-  const MyProfile({Key? key}) : super(key: key);
+class MySettings extends StatelessWidget {
+  const MySettings({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class MyProfile extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const <Widget>[
-                     Padding(
+                      Padding(
                         padding: EdgeInsets.fromLTRB(0, 0, 16, 16),
                         child: Icon(Icons.arrow_back),
                       )
@@ -27,7 +27,7 @@ class MyProfile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const <Widget>[
                       Text(
-                        'Profile',
+                        'Settings',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -59,11 +59,7 @@ class MyProfile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       const Text(
-                        'Email',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      const Text(
-                        'Email',
+                        'Account',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       Padding(
@@ -162,7 +158,7 @@ class MyProfile extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(16.0, 0, 16, 16),
                         child: Column(
                           children: const <Widget>[
-                          Icon(Icons.arrow_forward_ios),
+                            Icon(Icons.arrow_forward_ios),
                           ],
                         ),
                       )

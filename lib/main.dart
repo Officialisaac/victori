@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:victoria/screen/welcome.dart';
+import 'package:victoria/screen/home.dart';
+// import 'package:victoria/screen/welcome.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.orange,
           primaryColor: Colors.deepOrangeAccent,
           visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: const WelcomePage(),
+      home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
