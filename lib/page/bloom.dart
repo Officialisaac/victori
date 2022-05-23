@@ -20,7 +20,7 @@ class _HomePagesState extends State<HomePages> {
   @override
   void initState() {
     // _controller = VideoPlayerController.network(
-    //     "https://www.youtube.com/watch?v=1SNQcMPYVHg");
+    //     "https://www.youtube.com/watch?v=tVy4YNL4dRo");
     _controller = VideoPlayerController.asset(asset);
     _initializeVideoPlayerFuture =
         _controller.initialize().then((value) => _controller.play());
@@ -39,77 +39,73 @@ class _HomePagesState extends State<HomePages> {
     // ignore: unused_local_variable
     PageController controller = PageController(initialPage: 0);
 
-    Future<void> _refresh(){
+    Future<void> _refresh() {
       _controller.initialize();
       return _controller.play();
     }
 
-    List<Widget> reel = [
-      Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          color: Colors.white,
-          child: FutureBuilder(
-              future: _initializeVideoPlayerFuture,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState ==
-                    ConnectionState.done) {
-                  return AspectRatio(
-                      aspectRatio: _controller.value.aspectRatio,
-                      child: Center(
-                          child: Stack(
-                            children: [
-                              VideoPlayer(_controller),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 200.0,bottom: 80.0),
-                                child: Row(
-                                    children:[ Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: const [
-                                        IconButton(
-                                          padding: EdgeInsets.only(left: 145),
-                                            alignment: Alignment.bottomRight,
-                                              icon: Icon(Icons.favorite,
-                                              color: Colors.white,
-                                              ),
-                                              iconSize: 45,
-                                              onPressed: null),
-                                        Text("Kumasi National Zoo",style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
-                                        Text("Ghana",style: TextStyle(color: Colors.white),)
-                                      ],
-                                    ),]
-                                ),
-                              ),
-                            ],
-                          )));
-                } else {
-                  return Container(
-                    alignment: AlignmentGeometry.lerp(Alignment.center, Alignment.center, 50),
-                    height: MediaQuery.of(context).size.height,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: const Text('Try Again'),
-                  );
-                }
-              }),),
-      Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        color: Colors.green,
-      ),
-      Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        color: Colors.black,
-      ),
-      Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        color: Colors.white,
-      ),
-    ];
-
+    // List<Widget> reel = [
+    //   Container(
+    //     height: MediaQuery.of(context).size.height,
+    //     width: MediaQuery.of(context).size.width,
+    //     color: Colors.white,
+    //     child: FutureBuilder(
+    //         future: _initializeVideoPlayerFuture,
+    //         builder: (context, snapshot) {
+    //           if (snapshot.connectionState == ConnectionState.done) {
+    //             return AspectRatio(
+    //                 aspectRatio: _controller.value.aspectRatio,
+    //                 child: Center(
+    //                     child: Stack(
+    //                   children: [
+    //                     VideoPlayer(_controller),
+    //                     Padding(
+    //                       padding:
+    //                           const EdgeInsets.only(left: 200.0, bottom: 80.0),
+    //                       child: Row(children: [
+    //                         Column(
+    //                           mainAxisAlignment: MainAxisAlignment.end,
+    //                           crossAxisAlignment: CrossAxisAlignment.start,
+    //                           children: const [
+    //                             IconButton(
+    //                                 padding: EdgeInsets.only(left: 145),
+    //                                 alignment: Alignment.bottomRight,
+    //                                 icon: Icon(
+    //                                   Icons.favorite,
+    //                                   color: Colors.white,
+    //                                 ),
+    //                                 iconSize: 45,
+    //                                 onPressed: null),
+    //                             Text(
+    //                               "Kumasi National Zoo",
+    //                               style: TextStyle(
+    //                                   color: Colors.white,
+    //                                   fontSize: 18,
+    //                                   fontWeight: FontWeight.bold),
+    //                             ),
+    //                             Text(
+    //                               "Ghana",
+    //                               style: TextStyle(color: Colors.white),
+    //                             )
+    //                           ],
+    //                         ),
+    //                       ]),
+    //                     ),
+    //                   ],
+    //                 )));
+    //           } else {
+    //             return Container(
+    //               alignment: AlignmentGeometry.lerp(
+    //                   Alignment.center, Alignment.center, 50),
+    //               height: MediaQuery.of(context).size.height,
+    //               width: MediaQuery.of(context).size.width,
+    //               color: Colors.white,
+    //               child: const Text('Try Again'),
+    //             );
+    //           }
+    //         }),
+    //   ),
+    // ];
 
     List<Widget> reels = [
       RefreshIndicator(
@@ -122,7 +118,7 @@ class _HomePagesState extends State<HomePages> {
           scrollDirection: Axis.vertical,
           physics: const BouncingScrollPhysics(),
           controller: controller,
-          slivers : [
+          slivers: [
             SliverList(
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
@@ -140,23 +136,38 @@ class _HomePagesState extends State<HomePages> {
                                     children: [
                                       VideoPlayer(_controller),
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 200.0,bottom: 80.0),
-                                        child: Row(
-                                          children:[ Column(
-                                            mainAxisAlignment: MainAxisAlignment.end,
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                        padding: const EdgeInsets.only(
+                                            left: 200.0, bottom: 80.0),
+                                        child: Row(children: [
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: const [
-                                              Text("Kumasi National Zoo",style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
-                                              Text("Ghana",style: TextStyle(color: Colors.white),)
+                                              Text(
+                                                "Kumasi National Zoo",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 18,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              Text(
+                                                "Ghana",
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              )
                                             ],
-                                          ),]
-                                        ),
+                                          ),
+                                        ]),
                                       ),
                                     ],
                                   )));
                             } else {
                               return Container(
-                                alignment: AlignmentGeometry.lerp(Alignment.center, Alignment.center, 50),
+                                alignment: AlignmentGeometry.lerp(
+                                    Alignment.center, Alignment.center, 50),
                                 height: MediaQuery.of(context).size.height,
                                 width: MediaQuery.of(context).size.width,
                                 color: Colors.white,
@@ -183,7 +194,7 @@ class _HomePagesState extends State<HomePages> {
         displacement: 100,
         child: PageView(
           scrollDirection: Axis.vertical,
-          children: reel,
+          children: reels,
           controller: controller,
           pageSnapping: true,
           allowImplicitScrolling: false,
