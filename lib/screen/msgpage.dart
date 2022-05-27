@@ -70,7 +70,7 @@ class _MessagePageState extends State<MessagePage> {
             onPressed: _pushAddMessageScreen,
             tooltip: 'Add task',
             child: const Icon(Icons.add)),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
       ),
     );
   }

@@ -3,6 +3,8 @@ import 'dart:math';
 
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
+import '../model/searchList.dart';
+
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 
@@ -81,8 +83,7 @@ class _SearchPageState extends State<SearchPage> {
                     disabledBorder: InputBorder.none,
                     suffixIcon: Icon(Icons.search),
                     hintText: 'Search here',
-                    contentPadding: EdgeInsets.only(left: 10, top: 10)
-                ),
+                    contentPadding: EdgeInsets.only(left: 10, top: 10)),
                 onChanged: (value) {
                   setState(() {
                     foodListSearch = foodList
@@ -97,59 +98,74 @@ class _SearchPageState extends State<SearchPage> {
                 },
               ),
             )),
-        body: _textEditingController!.text.isNotEmpty &&
-            foodListSearch!.length == 0
-            ? Center(
-          child: Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Column(
-              children: const [
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Icon(
-                    Icons.search_off,
-                    size: 50,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(2.0),
-                  child: Text(
-                    'Try again',
-                    style: TextStyle(
-                        fontSize: 30, fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        )
-            : GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 3,
-              crossAxisSpacing: 12,
-            ),
-            itemCount: _textEditingController!.text.isNotEmpty
-                ? foodListSearch!.length
-                : foodList.length,
-            itemBuilder: (ctx, index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    // const CircleAvatar(
-                    //   child: Icon(Icons.food_bank),
-                    // ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Card(
-                      color: Colors.grey,
-                      child: Text(_textEditingController!.text.isNotEmpty
-                          ? foodListSearch![index]
-                          : foodList[index]),
-                    ),
-                  ],
+        // _textEditingController!.text.isNotEmpty &&
+        //     foodListSearch!.length == 0
+        //     ? Center(
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(18.0),
+        //     child: Column(
+        //       children: const [
+        //         Padding(
+        //           padding: EdgeInsets.all(8.0),
+        //           child: Icon(
+        //             Icons.search_off,
+        //             size: 50,
+        //           ),
+        //         ),
+        //         Padding(
+        //           padding: EdgeInsets.all(2.0),
+        //           child: Text(
+        //             'Try again',
+        //             style: TextStyle(
+        //                 fontSize: 30, fontWeight: FontWeight.w600),
+        //           ),
+        //         ),
+        //       ],
+        //     ),
+        //   ),
+        // )
+        //     : GridView.builder(
+        //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        //       crossAxisCount: 2,
+        //       childAspectRatio: 3,
+        //       crossAxisSpacing: 12,
+        //     ),
+        //     itemCount: _textEditingController!.text.isNotEmpty
+        //         ? foodListSearch!.length
+        //         : foodList.length,
+        //     itemBuilder: (ctx, index) {
+        //       return Padding(
+        //         padding: const EdgeInsets.all(8.0),
+        //         child: Row(
+        //           children: [
+        //             // const CircleAvatar(
+        //             //   child: Icon(Icons.food_bank),
+        //             // ),
+        //             const SizedBox(
+        //               width: 10,
+        //             ),
+        //             Card(
+        //               color: Colors.grey,
+        //               child: Text(_textEditingController!.text.isNotEmpty
+        //                   ? foodListSearch![index]
+        //                   : foodList[index]),
+        //             ),
+        //           ],
+        //         ),
+        //       );
+        //     })
+
+        body: ListView.builder(
+            itemCount: searchList.length,
+            itemBuilder: (context, index) {
+              // ignore: non_constant_identifier_names, unused_local_variable
+              searchs Searchs = searchList[index];
+              return Card(
+                child: ListTile(
+                  title: Text(Searchs.title),
+                  subtitle: Text(Searchs.description),
+                  leading: Image.network(Searchs.imageUrl),
+                  trailing: const Icon(Icons.arrow_forward_rounded),
                 ),
               );
             }));
